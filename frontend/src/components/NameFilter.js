@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const NameFilter = () => {
+const NameFilter = (props) => {
   return (
     <div className="filter">
-      <form className="search">
+      <form className="search" onSubmit={props.handleNameSubmit}>
         <label>
           Name Filter:
           <input
             type="text"
-            name="name"
+            name="nameValue"
+            value={props.nameValue}
+            onChange={props.handleChange}
             placeholder="Filter board games by name"
           />
         </label>

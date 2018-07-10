@@ -2,7 +2,7 @@ import React from 'react';
 
 const GenreDropdown = ({ genres, currentGenre, handleDropdown }) => {
   return (
-    <select className="dropdown" value={currentGenre.id} onChange={handleDropdown}>
+    <select className="dropdown" onChange={handleDropdown}>
       {genres.map((genre) => {
         return (
           <option

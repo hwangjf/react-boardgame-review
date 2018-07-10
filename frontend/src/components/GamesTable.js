@@ -2,18 +2,26 @@ import React from 'react';
 
 const GamesTable = (props) => {
   return (
+    props ?
     <table className="games">
       <tbody>
-        <tr>
-          <th>
-            <h3 className="">Name</h3>
-          </th>
-          <th>
-            <h3 className="">Genre</h3>
-          </th>
-        </tr>
+        {props.games.map(game=>{
+          return (
+            <tr key={game.id} >
+              <th>
+                <h3 className="">{game.name}</h3>
+              </th>
+              <th>
+                <h3 className="">{game.genre.name}</h3>
+              </th>
+            </tr>
+          )
+        })
+        }
       </tbody>
     </table>
+    :
+    null
   )
 }
 
